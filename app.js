@@ -9,9 +9,30 @@ var hbs = require('express-handlebars')
 
 var mongoClient = require('mongodb').MongoClient
 mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind', (err, db) => {
-  if (err) console.log('Error trying to connect to DB')
+  if (err) {
+    console.log('Error trying to connect to DB')
+    throw err
+  }
   console.log('Connected to DB')
-  db.close()
+
+  db.createCollection('users',
+    {
+      validator: {
+        $or: [
+          {
+            email: {
+              $exists: true }
+          }
+        ]
+      }
+    }, (err, res) => {
+      if (err) {
+        console.log('Error creating the collection')
+        throw err
+      }
+      console.log('Collection created succesfully')
+      db.close()
+    })
 })
 
 var app = express()
@@ -29,7 +50,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, './front/public')))
 
-// Loads al the files in directory '.routes' and creates its route
+// loads al the files in directory '.routes' and creates its route
 fs.readdirSync('./routes')
   .forEach(file => {
     let route = file.replace('.js', '')
