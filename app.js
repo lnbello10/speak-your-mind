@@ -8,7 +8,10 @@ var bodyParser = require('body-parser')
 
 var mongoClient = require('mongodb').MongoClient
 mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind', (err, db) => {
-  if (err) console.log('Error trying to connect to DB')
+  if (err) {
+    console.log('Error trying to connect to DB')
+    throw err
+  }
   console.log('Connected to DB')
 
   db.createCollection('users',
@@ -22,7 +25,10 @@ mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind
         ]
       }
     }, (err, res) => {
-      if (err) console.log('Error creating the collection')
+      if (err) {
+        console.log('Error creating the collection')
+        throw err
+      }
       console.log('Collection created succesfully')
       db.close()
     })
