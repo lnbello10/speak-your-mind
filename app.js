@@ -5,6 +5,13 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 
+var mongoClient = require('mongodb').MongoClient
+mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind', function (err, db) {
+  if (err) console.log('Error trying to connect to DB')
+  console.log('Connected to DB')
+  db.close()
+})
+
 var index = require('./routes/index')
 var users = require('./routes/users')
 
