@@ -5,6 +5,7 @@ var path = require('path')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var hbs = require('express-handlebars')
 
 var mongoClient = require('mongodb').MongoClient
 mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind', (err, db) => {
@@ -16,8 +17,9 @@ mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind
 var app = express()
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jade')
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir:__dirname + '/views/layouts/'}));
+app.set('views', path.join(__dirname, 'views/layouts'));
+app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
