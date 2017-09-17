@@ -12,10 +12,10 @@ const auth = jwtAuth({
   userProperty: 'payload'
 })
 
-router.get('/:name', auth, (req, res) => {
+router.get('/:name', (req, res) => {
   mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind', (err, db) => {
     if (err) throw err
-    db.collection('chats').find({name: req.params.name}).toArray((err, result) => {
+    db.collection('chats').findOne({name: req.params.name}, (err, result) => {
       if (err) throw err
       res.send(result)
       db.close()

@@ -15,9 +15,9 @@ class Navbar extends Component {
             <li className='dropdown'>
               <a className='dropdown-toggle' data-toggle='dropdown'>Languages<span className='caret' /></a>
               <ul className='dropdown-menu'>
-                <li><a href='#a'>Page 1-1</a></li>
-                <li><a href='#b'>Page 1-2</a></li>
-                <li><a href='#c'>Page 1-3</a></li>
+                <li><a href='#chats/spanish'>Spanish</a></li>
+                <li><a href='#chats/english'>English</a></li>
+                <li><a href='#chats/french'>Frech</a></li>
               </ul>
             </li>
             <li><a href='#about'>About</a></li>
