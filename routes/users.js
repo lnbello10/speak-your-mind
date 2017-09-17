@@ -5,7 +5,9 @@ const crypto = require('crypto')
 const jwt = require('jsonwebtoken')
 const jwtAuth = require('express-jwt')
 
-// authorization middleware takes the 'Authorization' header, it has to be 'Bearer <token>'
+// authorization middleware takes the 'Authorization' header, it has to be 'Bearer <token>'.
+// it saves the user in req.payload
+
 const auth = jwtAuth({
   secret: 'MY_SECRET',
   userProperty: 'payload'

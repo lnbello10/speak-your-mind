@@ -3,23 +3,21 @@ var mongoClient = require('mongodb').MongoClient
 mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind', (err, db) => {
   if (err) throw err
 
-  db.createCollection('users',
+  db.createCollection('chats',
     {
       validator: {
         $and: [
           {
-            email: { $type: 'string', $exists: true },
-            hash: { $type: 'string', $exists: true },
-            salt: { $type: 'string', $exists: true }
+            name: { $type: 'string', $exists: true }
           }
         ]
       }
     }, (err, res) => {
       if (err) {
-        console.log('Error creating the collection USERS')
+        console.log('Error creating the collection CHATS')
         throw err
       }
-      console.log('Collection USERS created succesfully')
+      console.log('Collection CHATS created succesfully')
       db.close()
     })
 })
