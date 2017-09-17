@@ -44,25 +44,28 @@ class Register extends Component {
 
   render () {
     return (
-      <form className='form-horizontal' onSubmit={this.handleSubmit}>
-        <div className='form-group'>
-          <label class='control-label col-sm-2' for='email'>Email</label>
-          <div className='col-sm-10'>
-            <input id='email' name='email' type='email' className='form-control' value={this.state.email} onChange={this.handleInputChange} placeholder='Enter email' />
+      <div>
+        <h1>Join Our Comunity</h1>
+        <form className='form-horizontal' onSubmit={this.handleSubmit}>
+          <div className='form-group'>
+            <label className='control-label col-sm-2'>Email</label>
+            <div className='col-sm-10'>
+              <input name='email' type='email' className='form-control' value={this.state.email} onChange={this.handleInputChange} placeholder='Enter email' />
+            </div>
           </div>
-        </div>
-        <div className='form-group'>
-          <label class='control-label col-sm-2' for='password'>Pssword</label>
-          <div className='col-sm-10'>
-            <input id='password' name='password' type='password' className='form-control' value={this.state.password} onChange={this.handleInputChange} placeholder='Enter password' />
+          <div className='form-group'>
+            <label className='control-label col-sm-2'>Password</label>
+            <div className='col-sm-10'>
+              <input name='password' type='password' className='form-control' value={this.state.password} onChange={this.handleInputChange} placeholder='Enter password' />
+            </div>
           </div>
-        </div>
-        <div class='form-group'>
-          <div class='col-sm-offset-2 col-sm-10'>
-            <button type='submit' class='btn btn-default'>Submit</button>
+          <div className='form-group'>
+            <div className='col-sm-offset-2 col-sm-10'>
+              <button type='submit' className='btn btn-default'>Submit</button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     )
   }
 }
