@@ -16,25 +16,7 @@ mongoClient.connect('mongodb://node:node@ds036967.mlab.com:36967/speak-your-mind
     throw err
   }
   console.log('Connected to DB')
-
-  db.createCollection('users',
-    {
-      validator: {
-        $or: [
-          {
-            email: {
-              $exists: true }
-          }
-        ]
-      }
-    }, (err, res) => {
-      if (err) {
-        console.log('Error creating the collection')
-        throw err
-      }
-      console.log('Collection created succesfully')
-      db.close()
-    })
+  db.close()
 })
 
 var app = express()
@@ -55,6 +37,13 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, './front/build')))
+
+// loads al the files in directory '.routes' and creates its route
+fs.readdirSync('./models')
+  .forEach(file => {
+    let route = file.replace('.js', '')
+    require(`./models/${route}`)
+  })
 
 // loads al the files in directory '.routes' and creates its route
 fs.readdirSync('./routes')
