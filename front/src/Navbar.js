@@ -23,7 +23,7 @@ class Navbar extends Component {
             <li><a href='#about'>About</a></li>
           </ul>
           <ul className='nav navbar-nav navbar-right'>
-            <li><a href='#register'><span className='glyphicon glyphicon-user' /> Sign Up</a></li>
+            <li><a href='#signUp'><span className='glyphicon glyphicon-user' /> Sign Up</a></li>
             <li><a href='#login'><span className='glyphicon glyphicon-log-in' /> Login</a></li>
           </ul>
         </div>
