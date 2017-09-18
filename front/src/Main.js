@@ -4,6 +4,7 @@ import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
 
 import Home from './Home'
+import About from './About'
 import SignUp from './SignUp'
 import Login from './Login'
 import Logout from './Logout'
@@ -16,6 +17,7 @@ class Main extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/home' render={(props) => <Home token={this.props.token} {...props} />} />
+          <Route path='/about' render={(props) => <About token={this.props.token} {...props} />} />
           <Route path='/signUp' render={(props) => <SignUp saveToken={this.props.saveToken} url={this.props.url} {...props} />} />
           <Route path='/login' render={(props) => <Login saveToken={this.props.saveToken} url={this.props.url} {...props} />} />
           <Route path='/logout' render={(props) => <Logout deleteToken={this.props.deleteToken} />} />

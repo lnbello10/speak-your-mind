@@ -11,13 +11,12 @@ class Navbar extends Component {
             <a className='navbar-brand' href='#home'>SpeakYourMind</a>
           </div>
           <ul className='nav navbar-nav'>
-            <li className='active'><a href='#home'>Home</a></li>
             <li className='dropdown'>
               <a className='dropdown-toggle' data-toggle='dropdown'>Languages<span className='caret' /></a>
               <ul className='dropdown-menu'>
-                <li><a href='#chats/spanish'>Spanish</a></li>
-                <li><a href='#chats/english'>English</a></li>
-                <li><a href='#chats/french'>French</a></li>
+                <li className='a-dropdown'><a href='#chats/spanish'>Spanish</a></li>
+                <li className='a-dropdown'><a href='#chats/english'>English</a></li>
+                <li className='a-dropdown'><a href='#chats/french'>French</a></li>
               </ul>
             </li>
             <li><a href='#about'>About</a></li>

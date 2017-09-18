@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import Main from './Main'
+import './App.css'
 
 class App extends Component {
   constructor (props) {
@@ -8,7 +9,8 @@ class App extends Component {
     this.state = {
       token: null
     }
-    this.url = 'https://speak-your-mind.herokuapp.com/'
+    // this.url = 'https://speak-your-mind.herokuapp.com/'
+    this.url = 'http://localhost:3000/'
   }
 
   saveToken (token) {
@@ -25,7 +27,9 @@ class App extends Component {
     return (
       <div>
         <Navbar token={this.state.token} />
-        <Main token={this.state.token} saveToken={this.saveToken.bind(this)} deleteToken={this.deleteToken.bind(this)} url={this.url} />
+        <div className='main'>
+          <Main token={this.state.token} saveToken={this.saveToken.bind(this)} deleteToken={this.deleteToken.bind(this)} url={this.url} />
+        </div>
       </div>
     )
   }

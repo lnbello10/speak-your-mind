@@ -49,6 +49,7 @@ class Chat extends Component {
   render () {
     return (
       <div>
+        {this.props.token &&
         <form className='form-horizontal' onSubmit={this.handleSubmit}>
           <div className='form-group'>
             <label className='control-label col-sm-2'>New Message:</label>
@@ -62,6 +63,8 @@ class Chat extends Component {
             </div>
           </div>
         </form>
+      }
+        {!this.props.token && <h1>Register or login to start spealing your mind!</h1>}
         <MessageList messages={this.state.chat.messages} />
       </div>
     )
@@ -80,7 +83,6 @@ class Chat extends Component {
         this.setState({
           chat: chat
         })
-        // chat.messages.forEach()
       } else {
         let error = await response.text()
         console.log(error)
