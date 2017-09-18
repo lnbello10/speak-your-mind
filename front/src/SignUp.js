@@ -47,6 +47,11 @@ class Register extends Component {
   render () {
     return (
       <div>
+        <div className='alert alert-dismissible alert-warning'>
+          <button type='button' className='close' data-dismiss='alert'>&times;</button>
+          <h4>Warning!</h4>
+          <p>By continuing you are definitelly coming out from your confort-zone.</p>
+        </div>
         <h1>Join Our Comunity</h1>
         <form className='form-horizontal' onSubmit={this.handleSubmit}>
           <div className='form-group'>

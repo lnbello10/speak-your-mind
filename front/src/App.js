@@ -9,8 +9,8 @@ class App extends Component {
     this.state = {
       token: null
     }
-    // this.url = 'https://speak-your-mind.herokuapp.com/'
-    this.url = 'http://localhost:3000/'
+    this.url = 'https://speak-your-mind.herokuapp.com/'
+    // this.url = 'http://localhost:3000/'
   }
 
   saveToken (token) {

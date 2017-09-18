@@ -64,7 +64,7 @@ class Chat extends Component {
           </div>
         </form>
       }
-        {!this.props.token && <h1>Register or login to start spealing your mind!</h1>}
+        {!this.props.token && <h1>Register or login to start speaking your mind!</h1>}
         <MessageList messages={this.state.chat.messages} />
       </div>
     )
