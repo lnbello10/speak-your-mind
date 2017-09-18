@@ -29,7 +29,10 @@ class Register extends Component {
       if (response.status === 460) {
         alert('Ya existe un usuario con ese correo')
       } else if (response.status === 200) {
-        alert('Creado el usuario')
+        let token = await response.text()
+        this.props.saveToken(token)
+        alert('Created user and logged in')
+        this.props.history.push('home')
       } else throw new Error('Respuesta por parte del servidor no manejada en el front')
     } catch (error) {
       console.log(error)

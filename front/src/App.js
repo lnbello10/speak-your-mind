@@ -6,7 +6,7 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      token: ''
+      token: null
     }
   }
 
@@ -14,10 +14,16 @@ class App extends Component {
     this.setState({token: token})
   }
 
+  deleteToken () {
+    this.setState({
+      token: null
+    })
+  }
+
   render () {
     return (
       <div>
-        <Navbar />
+        <Navbar token={this.state.token} deleteToken={this.deleteToken.bind(this)} />
         <Main token={this.state.token} saveToken={this.saveToken.bind(this)} />
       </div>
     )

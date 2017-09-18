@@ -44,6 +44,7 @@ router.post('/login', (req, res) => {
         else {
           var expiry = new Date()
           expiry.setDate(expiry.getDate() + 7)
+          db.close()
           res.status(200)
           res.send(jwt.sign({
             _id: user._id,
@@ -73,8 +74,15 @@ router.post('/', (req, res) => {
         }
         db.collection('users').insertOne(user, (err, result) => {
           if (err) throw err
+          var expiry = new Date()
+          expiry.setDate(expiry.getDate() + 7)
           db.close()
-          res.sendStatus(200)
+          res.status(200)
+          res.send(jwt.sign({
+            _id: user._id,
+            email: user.email,
+            exp: parseInt(expiry.getTime() / 1000)
+          }, 'MY_SECRET'))
         })
       }
     })

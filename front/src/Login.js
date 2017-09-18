@@ -4,6 +4,7 @@ import React, {Component} from 'react'
 
 class Login extends Component {
   constructor (props) {
+    console.log(props)
     super(props)
     this.state = {
       email: '',
@@ -34,6 +35,7 @@ class Login extends Component {
         let token = await response.text()
         this.props.saveToken(token)
         alert('Logged in')
+        this.props.history.push('home')
       } else throw new Error('Respuesta por parte del servidor no manejada en el front')
     } catch (error) {
       console.log(error)
@@ -64,7 +66,7 @@ class Login extends Component {
           </div>
           <div className='form-group'>
             <div className='col-sm-offset-2 col-sm-10'>
-              <button type='submit' className='btn btn-default'>Go</button>
+              <button type='submit' className='btn btn-default'>Login</button>
             </div>
           </div>
         </form>
