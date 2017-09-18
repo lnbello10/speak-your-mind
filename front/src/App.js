@@ -24,8 +24,8 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Navbar token={this.state.token} deleteToken={this.deleteToken.bind(this)} url={this.url} />
-        <Main token={this.state.token} saveToken={this.saveToken.bind(this)} url={this.url} />
+        <Navbar token={this.state.token} />
+        <Main token={this.state.token} saveToken={this.saveToken.bind(this)} deleteToken={this.deleteToken.bind(this)} url={this.url} />
       </div>
     )
   }
