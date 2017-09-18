@@ -8,6 +8,7 @@ class App extends Component {
     this.state = {
       token: null
     }
+    this.url = 'https://speak-your-mind.herokuapp.com/'
   }
 
   saveToken (token) {
@@ -23,8 +24,8 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Navbar token={this.state.token} deleteToken={this.deleteToken.bind(this)} />
-        <Main token={this.state.token} saveToken={this.saveToken.bind(this)} />
+        <Navbar token={this.state.token} deleteToken={this.deleteToken.bind(this)} url={this.url} />
+        <Main token={this.state.token} saveToken={this.saveToken.bind(this)} url={this.url} />
       </div>
     )
   }

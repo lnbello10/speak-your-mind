@@ -4,7 +4,6 @@ import React, {Component} from 'react'
 
 class Login extends Component {
   constructor (props) {
-    console.log(props)
     super(props)
     this.state = {
       email: '',
@@ -17,7 +16,7 @@ class Login extends Component {
   async handleSubmit (e) {
     e.preventDefault()
     try {
-      let response = await fetch('http://localhost:3000/users/login', {
+      let response = await fetch(this.props.url + 'users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

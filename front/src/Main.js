@@ -15,11 +15,11 @@ class Main extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/home' render={(props) => <Home token={this.props.token} {...props} />} />
-          <Route path='/signUp' render={(props) => <SignUp saveToken={this.props.saveToken} {...props} />} />
-          <Route path='/login' render={(props) => <Login saveToken={this.props.saveToken} {...props} />} />
-          <Route path='/chats/spanish' render={(props) => <Chat token={this.props.token} language='spanish' {...props} />} />
-          <Route path='/chats/english' render={(props) => <Chat token={this.props.token} language='english' {...props} />} />
-          <Route path='/chats/french' render={(props) => <Chat token={this.props.token} language='french' {...props} />} />
+          <Route path='/signUp' render={(props) => <SignUp saveToken={this.props.saveToken} url={this.props.url} {...props} />} />
+          <Route path='/login' render={(props) => <Login saveToken={this.props.saveToken} url={this.props.url} {...props} />} />
+          <Route path='/chats/spanish' render={(props) => <Chat token={this.props.token} language='spanish' url={this.props.url} {...props} />} />
+          <Route path='/chats/english' render={(props) => <Chat token={this.props.token} language='english' url={this.props.url} {...props} />} />
+          <Route path='/chats/french' render={(props) => <Chat token={this.props.token} language='french' url={this.props.url} {...props} />} />
         </Switch>
       </main>
     )
