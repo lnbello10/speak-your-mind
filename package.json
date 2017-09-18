@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./bin/www --watch",
-     "heroku-postbuild": "cd front && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd front && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -20,6 +20,7 @@
     "jsonwebtoken": "^8.0.1",
     "mongodb": "^2.2.31",
     "morgan": "~1.7.0",
+    "pm2": "^2.7.0",
     "serve-favicon": "~2.3.2"
   }
 }
