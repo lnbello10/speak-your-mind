@@ -17,14 +17,14 @@ class Navbar extends Component {
               <ul className='dropdown-menu'>
                 <li><a href='#chats/spanish'>Spanish</a></li>
                 <li><a href='#chats/english'>English</a></li>
-                <li><a href='#chats/french'>Frech</a></li>
+                <li><a href='#chats/french'>French</a></li>
               </ul>
             </li>
             <li><a href='#about'>About</a></li>
           </ul>
           <ul className='nav navbar-nav navbar-right'>
-            <li><a href='#signUp'><span className='glyphicon glyphicon-user' /> Sign Up</a></li>
-            <li><a href='#login'><span className='glyphicon glyphicon-log-in' /> Login</a></li>
+            <li><a href='#signUp'><span className='glyphicon glyphicon-user' />Sign Up</a></li>
+            <li><a href='#login'><span className='glyphicon glyphicon-log-in' />Login</a></li>
           </ul>
         </div>
       </nav>

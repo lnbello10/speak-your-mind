@@ -26,7 +26,6 @@ class Login extends Component {
           password: this.state.password
         })
       })
-
       if (response.status === 401) {
         alert('Contraseña errónea')
       } else if (response.status === 460) {
@@ -34,6 +33,7 @@ class Login extends Component {
       } else if (response.status === 200) {
         let token = await response.text()
         this.props.saveToken(token)
+        alert('Logged in')
       } else throw new Error('Respuesta por parte del servidor no manejada en el front')
     } catch (error) {
       console.log(error)

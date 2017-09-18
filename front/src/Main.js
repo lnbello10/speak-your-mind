@@ -18,6 +18,8 @@ class Main extends Component {
           <Route path='/signUp' component={SignUp} />
           <Route path='/login' render={() => <Login saveToken={this.props.saveToken} />} />
           <Route path='/chats/spanish' render={() => <Chat token={this.props.token} language='spanish' />} />
+          <Route path='/chats/english' render={() => <Chat token={this.props.token} language='english' />} />
+          <Route path='/chats/french' render={() => <Chat token={this.props.token} language='french' />} />
         </Switch>
       </main>
     )

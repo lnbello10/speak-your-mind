@@ -1,12 +1,15 @@
 /* global fetch, alert */
 
 import React, {Component} from 'react'
+import MessageList from './MessageList'
 
 class Chat extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      chat: null,
+      chat: {
+        messages: []
+      },
       message: ''
     }
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -59,10 +62,7 @@ class Chat extends Component {
             </div>
           </div>
         </form>
-        <div>
-          <h1>Messages: {this.state.chat ? this.state.chat.messages.length : '0'}</h1>
-          <div className='messages' />
-        </div>
+        <MessageList messages={this.state.chat.messages} />
       </div>
     )
   }
