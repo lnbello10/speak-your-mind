@@ -19,7 +19,7 @@ class Chat extends Component {
   async handleSubmit (e) {
     e.preventDefault()
     try {
-      let response = await fetch('http://localhost:3000/chats/' + this.props.language + '/message', {
+      let response = await fetch(this.props.url + 'chats/' + this.props.language + '/message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ class Chat extends Component {
 
   async componentDidMount () {
     try {
-      let response = await fetch('http://localhost:3000/chats/' + this.props.language, {
+      let response = await fetch(this.props.url + 'chats/' + this.props.language, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + this.props.token

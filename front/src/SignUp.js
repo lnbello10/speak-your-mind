@@ -16,7 +16,7 @@ class Register extends Component {
   async handleSubmit (e) {
     e.preventDefault()
     try {
-      let response = await fetch('http://localhost:3000/users', {
+      let response = await fetch(this.props.url + 'users/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
