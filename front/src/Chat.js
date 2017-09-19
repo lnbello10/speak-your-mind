@@ -92,5 +92,7 @@ class Chat extends Component {
     }, 1500)
   }
 }
-
+//Laura:Acerca de la página en general, me pareció que se ve muy bonita y que el tema es interesante. Me gustó mucho que no hubiera necesidad
+//de hacer diferentes clases para cada idioma sino que lo hicieron por la url. 
+//Vi un problema al recargar la página porque se pierden las credenciales y hay que iniciar sesión otra vez.
 export default Chat
