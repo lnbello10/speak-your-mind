@@ -49,6 +49,8 @@ class Chat extends Component {
   render () {
     return (
       <div>
+        {!this.props.token && <h1>Register or login to start speaking your mind!</h1>}
+        <MessageList messages={this.state.chat.messages} />
         {this.props.token &&
         <form className='form-horizontal' onSubmit={this.handleSubmit}>
           <div className='form-group'>
@@ -64,33 +66,27 @@ class Chat extends Component {
           </div>
         </form>
       }
-        {!this.props.token && <h1>Register or login to start speaking your mind!</h1>}
-        <MessageList messages={this.state.chat.messages} />
       </div>
     )
   }
 
-  async componentDidMount () {
-    try {
-      let response = await fetch(this.props.url + 'chats/' + this.props.language, {
+  componentDidMount () {
+    setInterval(() => {
+      fetch(this.props.url + 'chats/' + this.props.language, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + this.props.token
         }
+      }).then(response => {
+        if (response.status === 200) {
+          response.json().then(chat => {
+            this.setState({
+              chat: chat
+            })
+          })
+        }
       })
-      if (response.status === 200 || response.status === 304) {
-        let chat = await response.json()
-        this.setState({
-          chat: chat
-        })
-      } else {
-        let error = await response.text()
-        console.log(error)
-        throw new Error('Respuesta por parte del servidor no manejada en el front')
-      }
-    } catch (error) {
-      console.log(error)
-    }
+    }, 1500)
   }
 }
 
