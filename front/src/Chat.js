@@ -31,6 +31,9 @@ class Chat extends Component {
       })
       if (response.status === 200) {
         alert('Sent')
+        this.setState({
+          'message': ''
+        })
       } else if (response.status === 401) {
         alert('Log in first')
       } else {
