@@ -24,13 +24,13 @@ class Home extends Component {
           <h3>- Start writting in:</h3>
           <div className='row'>
             <div className='jumbotron col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12'>
-              <h2> <a href='#chats/english'>English</a> </h2>
+              <h2 style={{textAlign: 'center'}}> <a href='#chats/english'>English</a> </h2>
             </div>
             <div className='jumbotron col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12'>
-              <h2><a href='#chats/spanish'>Spanish</a></h2>
+              <h2 style={{textAlign: 'center'}}><a href='#chats/spanish'>Spanish</a></h2>
             </div>
             <div className='jumbotron col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12'>
-              <h2><a href='#chats/french'>French</a></h2>
+              <h2 style={{textAlign: 'center'}}><a href='#chats/french'>French</a></h2>
             </div>
           </div>
         </div>
