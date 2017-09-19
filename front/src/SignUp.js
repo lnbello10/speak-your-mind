@@ -76,5 +76,10 @@ class Register extends Component {
     )
   }
 }
-
+//Tal vez deberían ponerle más campos al registro para que salga el nombre de la persona o algunos gustos.
+//O tal vez, como es parecido a iniciar sesión, se podría usar la misma clase y que en el back se verifique si ese correo con esa contraseña
+//existen o sino los crea, para no tener dos clases tan parecidas.
+//No tengo muchos comentarios porque me pareció muy chevere la página, en la parte del código todo está muy bien manejado, se entiende
+//que es lo que están haciendo y lo que querían lograr. Podrían poner un poquito de documentación para identificar más rápido que parte
+//del código hace que.
 export default Register
